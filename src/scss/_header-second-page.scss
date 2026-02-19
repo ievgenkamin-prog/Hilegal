@@ -1,0 +1,260 @@
+@use 'vars' as v;
+
+.header{
+
+    &__media{
+
+        @include v.flex(center);
+        padding: 30px 0 28px;
+
+        @media (min-width: v.$breakpoint-md){
+        padding: 60px 0 28px;
+    }
+    }
+    &__media>a{
+        cursor: pointer;
+    }
+    &__media-svg{
+        width: 92px;
+        height: 92px;
+    }
+    &__link{
+        text-decoration: none;
+        line-height: 37px;
+        font-weight: 700;
+        font-size: 30px;
+        @include v.text-gradient;
+
+        @media (min-width: v.$breakpoint-md){
+            line-height: 46px;
+            font-size: 38px;
+    }
+    }
+    &__title{
+        padding-bottom: 28px;
+        text-align: center;
+    }
+    
+    &__media-desc{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 19px;
+        line-height: 30px;
+        color: var(--white-color);
+        text-align: center;
+    }
+    &__button-dialog{
+        font-family: v.$main-font;
+        width: 375px;
+        padding: 30px;
+        background: var(--grey-bg-color);
+        border: none;
+        min-height: 640px;
+
+
+        @media (min-width:375px){
+            overflow: hidden;
+        }
+
+        @media (min-width: v.$breakpoint-md){
+            width: 650px;
+            border-radius: v.$rounded-md;
+            min-height: 612px;
+        }
+    }
+   
+    &__button-dialog::backdrop{
+        background: none;
+
+        @media (min-width: v.$breakpoint-md){
+            background: var(--main-color);
+        }
+    }
+    &__button-dialog-head{
+        @include v.flex(space-between,flex-start);
+    }
+    &__button-dialog-title{
+        line-height: 37px;
+        font-weight: 700;
+        font-size: 30px;
+        
+        @include v.text-gradient;
+
+        @media (min-width: v.$breakpoint-md){
+            line-height: 46px;
+            font-size: 38px;
+        }
+    }
+    &__button-button{
+        cursor: pointer;
+    }
+    &__button-dialog-svg{
+        background: var(--grey-bg-color);
+        height: 32px;
+        width: 32px;
+        transition: color v.$transition-delay;
+    }
+    &__button-dialog-svg:hover{
+        background: var(--grey-separator-color);
+        border: none;
+        border-radius: v.$rounded-sm;
+        transition: color v.$transition-delay;
+    }
+
+    &__button-dialog-name{
+        font-family: v.$main-font;
+        margin-top: 30px;
+        height: 56px;
+        width: 100%;
+        border: none;
+        border-radius: v.$rounded-sm;
+        line-height: 26px;
+        font-weight: 400;
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    &__button-dialog-text{
+        margin:15px 0 30px;
+        max-height: 130px;
+        min-height: 130px;
+        max-width: 100%;
+        min-width: 100%;
+        border: none;
+        border-radius: v.$rounded-sm;
+        line-height: 26px;
+        font-weight: 400;
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    &__button-dialog-text::placeholder{
+        font-family: v.$main-font;
+        line-height: 26px;
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    &__button-dialog-question{
+        line-height: 17px;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--grey-text-color);
+        display: block;
+    }
+
+    &__button-dialog-number{
+        font-family: v.$main-font;
+        margin-top: 15px;
+        height: 56px;
+        width: 100%;
+        border: none;
+        border-radius: v.$rounded-sm;
+        line-height: 26px;
+        font-weight: 400;
+        font-size: 16px;
+        padding: 15px;
+        -moz-appearance: textfield;
+    }
+    &__button-dialog-number::-webkit-outer-spin-button{
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    &__button-dialog-number::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &__button-dialog-email{
+        font-family: v.$main-font;
+        margin: 15px 0 30px;
+        height: 56px;
+        width: 100%;
+        border: none;
+        border-radius: v.$rounded-sm;
+        line-height: 26px;
+        font-weight: 400;
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    &__button-dialog-send{
+        font-family: v.$main-font;
+        text-decoration: none;
+        background-color: var(--brand-regular-color);
+        color: var(--white-color);
+        border: none;
+        border-radius: v.$rounded-sm;
+        line-height: 20px;
+        font-weight: 700;
+        font-size: 16px;
+        padding: 18px;
+        display: block;
+        text-wrap: nowrap;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+    }
+    &__button{
+        @include v.flex(center);
+        padding: 28px 0 34px;
+        border-bottom: 4px solid rgba(255, 255, 255, 0.5);
+
+        @media (min-width: v.$breakpoint-md){
+        padding:28px 0 64px;
+    }
+}
+    &__button-text{
+        background-color: var(--brand-regular-color);
+        color: var(--white-color);
+        padding: 18px 30px;
+        border: none;
+        border-radius: v.$rounded-md;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 700;
+        box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+    }
+    &__second-title{
+        color: var(--white-color);
+        font-size: 22px;
+        line-height: 27px;
+        font-weight: 700;
+        padding-top: 30px;
+    }
+    &__second{
+        padding: 30px 0 60px;
+        @media (min-width: v.$breakpoint-md){
+
+        @include v.flex(center,flex-start);
+        gap: 60px;
+    }
+}
+    &__second-list{
+        @include v.flex(flex-start,flex-start);
+        flex-direction: column;
+        gap: 15px;
+        flex:1;
+
+    }
+    &__second-item{
+        line-height: 26px;
+        font-size: 18px;
+        color: var(--white-color);
+        padding-left: 14px;
+        position: relative;
+    }
+    &__second-item::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 12px;
+        width: 6px;
+        height: 6px;
+        background-color: var(--accent-color);
+        border-radius: v.$rounded-full;
+    }
+}

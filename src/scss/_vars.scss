@@ -1,0 +1,121 @@
+// state colors
+:root {
+  --white-color: #ffffff;
+  --main-color: #323264;
+  --main-alt-color: #46466e;
+  --main-soft-color: #686887;
+
+  --accent-color: #f0145a;
+
+  --brand-regular-color: #24a3ff;
+  --brand-hover-color: #0085ff;
+  --brand-active-color: #006ccf;
+
+  --grey-bg-color: #f5f5fa;
+  --grey-bg-alt-color: #ededf7;
+  --grey-text-color: #b3b3ba;
+  --grey-separator-color: #e6e6f0;
+
+  --main-gradient: linear-gradient(130deg, #323264 70%, #a54b5f);
+  --soft-gradient: linear-gradient(42deg, #323264 50%, #7a425e 88%);
+  --red-gradient: linear-gradient(325deg, #f0145a 5%, #693264 70%);
+  --super-soft-gradient: linear-gradient(230deg, #323264 60%, #643e72 90%);
+
+  --red-text-gradient: linear-gradient(90deg, #f0145a, #ef8080);
+  --red-reversed-gradient: linear-gradient(270deg, #f0145a, #ef8080);
+}
+
+
+
+// font
+$main-font: "Montserrat", sans-serif;
+
+// rad-es
+$rounded-sm: 8px;
+$rounded-md: 12px;
+$rounded-lg: 24px;
+$rounded-full: 50%;
+
+// breakpoints
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1440px;
+$breakpoint-xxl: 1920px;
+
+// transition
+$transition-delay: .2s linear;
+
+// mixins
+@mixin subtitle($color: var(--grey-text-color)) {
+ font-size: 30px;
+ font-weight: 700;
+ color: $color;
+
+ @media (min-width: $breakpoint-md) {
+    font-size: 38px;
+}
+}
+@mixin flex($justify-content:space-between, $align-items:center){
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin hover{
+  @media (hover:hover) and (pointer:fine){
+    &:hover{
+      @content;
+    }
+  }
+}
+
+@mixin link{
+  color: var(--brand-regular-color);
+  text-decoration: none;
+  transition: color $transition-delay;
+  @include hover{
+    --brand-regular-color: var(--accent-color);
+  }
+  &:active{
+    --brand-regular-color: var(--brand-active-color);
+  }
+}
+
+@mixin text-gradient ($gradient:var(--red-text-gradient)) {
+  color:transparent;
+  background: $gradient;
+  background-clip: text;
+}
+@mixin arrow-link{
+        text-decoration: none;
+        color: var(--brand-regular-color);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        line-height: 17px;
+        display: inline-block;
+         @include hover{
+    --brand-regular-color: var(--accent-color);
+  }
+  &:active{
+    --brand-regular-color: var(--brand-active-color);
+  }
+
+        &>.svg-blue, .svg-red{
+        width: 12px;
+        height: 12px;
+        padding-top: 1px;
+        }
+        &>.svg-red{
+          display: none;
+        }
+        &:hover{
+          .svg-blue{
+            display: none;
+          }
+          .svg-red{
+            display: inline-block;
+          }
+        } 
+      }

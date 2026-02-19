@@ -1,0 +1,69 @@
+
+@use 'vars' as v;
+
+.act {
+
+    &__container{
+
+    }
+    &__link{
+        @include v.arrow-link;
+    }
+    &__title{
+        @include v.text-gradient;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 37px;
+        padding: 10px 0 30px;
+
+        @media (min-width: v.$breakpoint-md){
+            font-size: 37px;
+            line-height: 46px;
+            padding: 10px 0 60px;
+        }
+    }
+    &__list {
+        padding-bottom: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+         @media (min-width: v.$breakpoint-md){
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap:60px;
+         }
+}
+&__item {
+    flex:1 1 30%;
+
+    @media (min-width: v.$breakpoint-lg){
+        flex:1 1 25%;
+    }
+}
+&__item-svg {
+    width: 92px;
+    height: 92px;
+}
+&__item-title >a{
+    text-decoration: none;
+    color: var(--brand-regular-color);
+    line-height: 27px;
+    font-weight: 700;
+    font-size: 22px;
+    
+}
+&__item-title >a:hover{
+    --brand-regular-color: var(--accent-color);
+}
+&__item-title {
+    padding:30px 0 15px;
+
+}
+&__item-desc {
+    color: var(--white-color);
+    font-size: 16px;
+    line-height: 26px;
+}
+}
+

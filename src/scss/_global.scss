@@ -1,0 +1,58 @@
+@use 'vars' as v;
+
+body{
+    font-family: v.$main-font;
+    font-weight: 400;
+}
+
+.wrapper{
+background: var(--super-soft-gradient);
+border-bottom-left-radius: v.$rounded-md;
+border-bottom-right-radius: v.$rounded-md;
+&__layer-first {
+    height: 10px;
+    background: #CACADB;
+    margin:0 20px;
+    border-bottom-left-radius: v.$rounded-md;
+    border-bottom-right-radius: v.$rounded-md;
+}
+&__layer-second {
+    height: 10px;
+    background: #E7E7F2;
+    margin:0 40px;
+    border-bottom-left-radius: v.$rounded-md;
+    border-bottom-right-radius: v.$rounded-md;
+}
+}
+.container {
+padding: 0 30px;
+@media (min-width: v.$breakpoint-md) {
+    max-width: 708px;
+    margin: 0 auto;
+}
+@media (min-width: v.$breakpoint-lg) {
+    max-width: 964px;
+}
+@media (min-width: v.$breakpoint-xl) {
+    max-width: 1380px;
+}
+@media (min-width: v.$breakpoint-xxl) {
+    max-width: 1660px;
+}
+}
+.dotted{
+    display: none;
+    @media (min-width: v.$breakpoint-md) {
+        display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: v.$rounded-full;
+
+    &--default {
+        background: var(--grey-separator-color);
+    }
+    &--grey {
+        --grey-separator-color: var(--grey-text-color);
+    }
+}
+}
