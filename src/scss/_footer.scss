@@ -1,0 +1,129 @@
+
+@use 'vars' as v;
+
+.footer {
+    background: var(--grey-bg-color);
+
+    &__line{
+        background: var(--grey-separator-color);
+        width: 100%;
+        height: 2px;
+    }
+&__container {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+
+    @media (min-width: v.$breakpoint-md){
+        max-width: 398px;
+        margin: 0 auto;
+    }
+
+    @media (min-width: v.$breakpoint-lg){
+        max-width:100%;
+        margin: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+&__adress {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    @media (min-width: v.$breakpoint-md){
+        flex-direction: row;
+    }
+
+    @media (min-width: v.$breakpoint-lg){
+        flex:1 1 50%;
+    }
+}
+&__name {
+    color: var(--main-color);
+    font-size: 16px;
+    line-height: 20px;
+}
+&__map {
+    color: var(--brand-regular-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 15px;
+    letter-spacing: 1px;
+
+    &:hover{
+        color: var(--accent-color);
+    }
+}
+&__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    @media (min-width: v.$breakpoint-md){
+        flex-direction: row;
+    }
+
+    @media (min-width: v.$breakpoint-lg){
+        order:1;
+    }
+}
+&__social {
+
+    &>svg{
+        color: var(--brand-regular-color);
+        width: 38px;
+        height: 38px;
+
+        &:hover{
+        color: var(--accent-color);
+    }
+    }
+}
+&__phone {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--main-alt-color);
+}
+&__email {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--brand-regular-color);
+
+    &:hover{
+        color: var(--accent-color);
+    }
+}
+&__trade-mark {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: var(--grey-text-color);
+    padding-top: 9px;
+
+
+@media (min-width: v.$breakpoint-lg){
+    padding-top: 0;
+}
+}
+
+&__dot{
+    display: none;
+    @media (min-width: v.$breakpoint-md) {
+        display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: v.$rounded-full;
+        background:var(--grey-text-color);
+}
+}
+}

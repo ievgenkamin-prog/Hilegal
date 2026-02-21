@@ -119,3 +119,17 @@ $transition-delay: .2s linear;
           }
         } 
       }
+
+      @mixin form-controls{
+        &:focus{
+        border: 1px solid;
+        border-color: var(--brand-regular-color);
+        outline: none;
+        }
+        &:user-invalid{
+          border: 1px solid var(--accent-color);
+        }
+        &:user-invalid::placeholder{
+          color: var(--accent-color);
+        }
+      }

@@ -102,7 +102,7 @@
         transition: color v.$transition-delay;
     }
 
-    &__button-dialog-name{
+    &__button-dialog-name {
         font-family: v.$main-font;
         margin-top: 30px;
         height: 56px;
@@ -113,7 +113,10 @@
         font-weight: 400;
         font-size: 16px;
         padding: 15px;
+
+        @include v.form-controls;
     }
+
 
     &__button-dialog-text{
         margin:15px 0 30px;
@@ -123,10 +126,13 @@
         min-width: 100%;
         border: none;
         border-radius: v.$rounded-sm;
+        font-family: v.$main-font;
         line-height: 26px;
         font-weight: 400;
         font-size: 16px;
         padding: 15px;
+
+        @include v.form-controls;
     }
 
     &__button-dialog-text::placeholder{
@@ -135,6 +141,7 @@
         font-weight: 400;
         font-size: 16px;
     }
+
 
     &__button-dialog-question{
         line-height: 17px;
@@ -158,6 +165,8 @@
         font-size: 16px;
         padding: 15px;
         -moz-appearance: textfield;
+
+        @include v.form-controls;
     }
     &__button-dialog-number::-webkit-outer-spin-button{
         -webkit-appearance: none;
@@ -167,6 +176,7 @@
         -webkit-appearance: none;
         margin: 0;
     }
+
 
     &__button-dialog-email{
         font-family: v.$main-font;
@@ -179,7 +189,10 @@
         font-weight: 400;
         font-size: 16px;
         padding: 15px;
+
+        @include v.form-controls;
     }
+
 
     &__button-dialog-send{
         font-family: v.$main-font;
@@ -196,6 +209,14 @@
         text-wrap: nowrap;
         text-align: center;
         box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+
+        &:hover{
+            background-color: var(--brand-hover-color)
+        }
+
+        &:active{
+            background-color: var(--brand-active-color)
+        }
     }
     &__button{
         @include v.flex(center);
@@ -217,6 +238,14 @@
         line-height: 20px;
         font-weight: 700;
         box-shadow: 0 0 20px rgba(36, 163, 255, 0.5);
+
+        &:hover{
+            background-color: var(--brand-hover-color)
+        }
+
+        &:active{
+            background-color: var(--brand-active-color)
+        }
     }
     &__second-title{
         color: var(--white-color);
@@ -226,25 +255,21 @@
         padding-top: 30px;
     }
     &__second{
-        padding: 30px 0 60px;
-        @media (min-width: v.$breakpoint-md){
-
-        @include v.flex(center,flex-start);
-        gap: 60px;
-    }
+        padding: 30px 0 45px;
+   
 }
     &__second-list{
-        @include v.flex(flex-start,flex-start);
-        flex-direction: column;
-        gap: 15px;
-        flex:1;
-
+        
+        @media (min-width: v.$breakpoint-md){
+            columns: 2;
+            column-gap: 60px;
+        }
     }
     &__second-item{
         line-height: 26px;
         font-size: 18px;
         color: var(--white-color);
-        padding-left: 14px;
+        padding:0 0 15px 14px;
         position: relative;
     }
     &__second-item::before{

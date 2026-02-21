@@ -74,4 +74,3 @@ closeButton.addEventListener("click", () => {
   dialog.close();
 });
 })();
-

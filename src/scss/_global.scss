@@ -1,5 +1,13 @@
 @use 'vars' as v;
 
+html{
+    @media (min-width: v.$breakpoint-lg){
+        &::-webkit-scrollbar{
+            width: 0;
+        }
+    }
+}
+
 body{
     font-family: v.$main-font;
     font-weight: 400;
